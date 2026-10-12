@@ -51,6 +51,10 @@ uvicorn app.main:app --reload       # docs at http://127.0.0.1:8000/docs
 
 Jobs are stored on disk (`data/jobs/<id>/`), so they survive restarts. Jobs interrupted by a restart are marked `failed`. One video is processed at a time.
 
+
+https://github.com/user-attachments/assets/dba05ae0-3f5f-4f17-ae00-1bb789ee5927
+
+
 ## 3. ONNX
 
 ```bash
