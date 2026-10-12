@@ -1,0 +1,20 @@
+{
+  "_comment": "Polygons use normalized coords (0-1) so they work at any resolution. Edit these to match your camera view.",
+  "settings": {
+    "enter_frames": 3,
+    "exit_frames": 5,
+    "max_missing_frames": 30
+  },
+  "zones": [
+    {
+      "name": "loading_dock",
+      "polygon": [[0.05, 0.50], [0.50, 0.50], [0.50, 0.95], [0.05, 0.95]],
+      "classes": null
+    },
+    {
+      "name": "pedestrian_walkway",
+      "polygon": [[0.55, 0.40], [0.95, 0.40], [0.95, 0.95], [0.55, 0.95]],
+      "classes": ["person"]
+    }
+  ]
+}
