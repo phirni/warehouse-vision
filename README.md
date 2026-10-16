@@ -4,7 +4,7 @@ End-to-end video analytics: **video → YOLO detection → ByteTrack → zone/ev
 
 https://github.com/user-attachments/assets/dba05ae0-3f5f-4f17-ae00-1bb789ee5927
 
-## Status (read this first)
+## Status 
 
 | Part | Verified |
 | --- | --- |
@@ -24,7 +24,7 @@ cp .env.example .env                # optional
 pytest                              # should pass without weights or GPU
 ```
 
-## 1. Run on a video (do this first)
+## 1. Run on a video 
 
 ```bash
 python -m scripts.process_video data/warehouse.mp4 \
@@ -79,7 +79,7 @@ docker run -p 8000:8000 -v "$PWD/data:/srv/data" --env-file .env warehouse-visio
 - Exit reasons: `left_zone`, `track_lost` (missing > `max_missing_frames`), `video_end`.
 - Known weakness: if ByteTrack swaps or loses an ID, you get an exit + a new entry. That's a tracking error showing up in event metrics, so measure it.
 
-## What's left to make this resume-ready
+## Future work
 
 1. **Warehouse classes.** Fine-tune on a forklift/pallet/person dataset (e.g. from Roboflow Universe), then pass the weights with `--weights` and set `--classes`.
 2. **Real evaluation.** Hand-label events in a few clips, compute event precision/recall, plus detection mAP and a tracking metric (HOTA/IDF1 via TrackEval). Save the numbers; don't quote assumed ones.
